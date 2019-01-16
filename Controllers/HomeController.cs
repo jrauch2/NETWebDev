@@ -5,6 +5,6 @@ namespace Northwind.Core.Controllers
 {
     public class HomeController : Controller
     {
-        public String Index() => "This is Home";
+        public ActionResult Index() => View();
     }
 }
