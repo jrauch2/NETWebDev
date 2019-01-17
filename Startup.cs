@@ -19,6 +19,7 @@ namespace Northwind.Core
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }
     }
