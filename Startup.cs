@@ -25,6 +25,14 @@ namespace Client
                 app.UseDeveloperExceptionPage();
             }
 
+            // the code way to specify a default file
+            // this must come before UseStaticFiles()
+            app.UseDefaultFiles( new DefaultFilesOptions
+            {
+                DefaultFileNames = new List<string> { "index.html" }
+            });
+
+            // allow the use of static files, i.e. html, css, js
             app.UseStaticFiles();
         }
     }
