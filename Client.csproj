@@ -9,6 +9,7 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\media\" />
+	<None Include="node_modules/**" />
   </ItemGroup>
 
   <ItemGroup>
