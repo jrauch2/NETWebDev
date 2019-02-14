@@ -26,7 +26,7 @@ $(function () {
 
     // hide toast on keydown
     $("body").keydown(function (e) {
-        if (e.originalEvent.keyCode === keyCodeHideToast) {
+        if (e.key === "Escape") {
             $("#toast").toast("hide");
         }
     });
