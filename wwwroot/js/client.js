@@ -4,7 +4,7 @@ $(function () {
     // pre-load audio
     var toast = new Audio("media/toast.wav");
     // keydown to hide toast on
-    var keyCodeHideToast = 27;
+    var key = "Escape";
 
 
     $(".code").on("click", function(e) {
@@ -26,7 +26,7 @@ $(function () {
 
     // hide toast on keydown
     $("body").keydown(function (e) {
-        if (e.key === "Escape") {
+        if (e.key === key) {
             $("#toast").toast("hide");
         }
     });
