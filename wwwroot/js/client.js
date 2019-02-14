@@ -17,10 +17,8 @@ $(function () {
         toast.play();
 
         // set the value of the toast data
-        $("#toast").data("name", $(this).parent().data("product").name);
-        $("#toast").data("code", $(this).parent().data("code"));
-        $("#product").text($("#toast").data("name"));
-        $("#code").text($("#toast").data("code"));
+        $("#product").text($(this).parent().data("product").name);
+        $("#code").text($(this).parent().data("code"));
 
         // show toast
         $("#toast").toast({ autohide: false }).toast("show");
