@@ -1,6 +1,10 @@
 ﻿/* global $ */
 $(function () {
     var rand = Math.floor(Math.random() * 10);
+    var attentionSeekers = [
+        "bounce", "flash", "pulse", "rubberBand", "shake", "swing", "tada", "wobble", "jello", "heartBeat"
+    ];
+
     $('#birthday').pickadate({ format: 'mmmm, d' });
 
     // uncheck all checkboxes (FireFox)
@@ -17,9 +21,6 @@ $(function () {
          $('#' + this.id + 'Img').addClass('animated slideOutDown slow');
     });
     // Randomize the attention seeker animation
-    var attentionSeekers = [
-        "bounce", "flash", "pulse", "rubberBand", "shake", "swing", "tada", "wobble", "jello", "heartBeat"
-    ];
     $("h1.animated").addClass(attentionSeekers[rand]);
     // submit button toast
     $("#submit").click(function() {
@@ -51,8 +52,11 @@ $(function () {
     });
     // change color on hover
     $('.form-check-label').hover(function () {
-        $('h1.animated').css('color', $(this).get(0).htmlFor);
+        if ($(this).get(0).htmlFor === "all") {
+            $('h1.animated').addClass('all');
+        }
+        $('h1.animated').removeClass('h1Color').css('color', $(this).get(0).htmlFor);
     }, function() {
-        $('h1.animated').css('color', "slategrey");
+        $('h1.animated').css('color', '').addClass('h1Color');
     });
 });
