@@ -11,7 +11,7 @@
 *.sln.docstates
 
 # JSG
-appsettings.json
+#appsettings.json
 launchsettings.json
 *.sln
 *.DS_Store
