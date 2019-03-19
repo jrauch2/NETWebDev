@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "Northwind Traders";
 }
+@using Northwind.Core.Models
+@model IEnumerable<Discount>
 
 <div class="jumbotron my-2 border border-secondary">
     <h1 class="display-4">Northwind</h1>
@@ -12,30 +14,17 @@
 </div>
 
 <div class="row">
-    <div class="col-md m-3 p-3 discounts">
-        <h3>Tis the Seasoning</h3>
-        <div class="mb-4">
-            Order today! Save 12.5% on Chef Anton&#x27;s Italian Seasoning. You don&#x27;t want to make Chef Anton mad, do you?
+    @foreach (Discount d in Model)
+    {
+        <div class="col-md m-3 p-3 discounts">
+            <h3>@d.Title</h3>
+            <div class="mb-4">
+                @d.Description
+            </div>
+            <i>Discount expires: @d.EndTime.ToString("MM/dd/yyyy")</i><br />
+            <a href="#" class="code" data-code="@d.Code" data-product="@d.Title"><i class="far fa-hand-point-right"></i> Discount Code</a>
         </div>
-        <i>Discount expires: 04/15/2019</i><br />
-        <a href="#" class="code" data-code="4444" data-product="Tis the Seasoning"><i class="far fa-hand-point-right"></i> Discount Code</a>
-    </div>
-    <div class="col-md m-3 p-3 discounts">
-        <h3>Go Green</h3>
-        <div class="mb-4">
-            Genen Shouyu goes on sale very rarely. Order now to save 10% off our already low price.
-        </div>
-        <i>Discount expires: 04/15/2019</i><br />
-        <a href="#" class="code" data-code="1515" data-product="Go Green"><i class="far fa-hand-point-right"></i> Discount Code</a>
-    </div>
-    <div class="col-md m-3 p-3 discounts">
-        <h3>Half Price</h3>
-        <div class="mb-4">
-            Just because you can&#x27;t pronounce &quot;Schoggi Schokolade&quot; doesn&#x27;t mean you shouldn&#x27;t buy it. Get it now for 50% off!
-        </div>
-        <i>Discount expires: 04/15/2019</i><br />
-        <a href="#" class="code" data-code="2727" data-product="Half Price"><i class="far fa-hand-point-right"></i> Discount Code</a>
-    </div>
+    }
 </div>
 
 <!-- toast -->
@@ -53,6 +42,6 @@
 
 
 @section Scripts
-{
-<script src="js/client.js"></script>
+    {
+    <script src="js/client.js"></script>
 }

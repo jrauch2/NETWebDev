@@ -12,6 +12,8 @@ namespace Northwind.Core.Controllers
         private INorthwindRepository repository;
         public HomeController(INorthwindRepository repo) => repository = repo;
 
-        public IActionResult Index() => View(repository.Categories.Include(c => c.Products).OrderBy(c => c.CategoryName).ToList());
+        public IActionResult Index() => View(repository.Discounts
+            .Where(d => d.StartTime <= DateTime.Now && d.EndTime > DateTime.Now)
+            .Take(3));
     }
 }

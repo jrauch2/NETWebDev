@@ -8,6 +8,7 @@ namespace Northwind.Core.Models
     {
         IQueryable<Category> Categories { get; }
         IQueryable<Product> Products { get; }
+        IQueryable<Discount> Discounts { get; }
 
         // TODO: AddBlog, UpdateBlog, DeleteBlog
         // TODO: AddPost, UpdatePost, DeletePost

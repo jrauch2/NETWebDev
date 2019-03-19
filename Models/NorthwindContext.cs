@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Northwind.Core.Models;
 
 namespace Northwind.Core.Models
 {
@@ -12,5 +13,6 @@ namespace Northwind.Core.Models
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
     }
 }

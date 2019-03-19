@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Northwind.Core.Models;
 
 namespace Northwind.Core.Models
 {
@@ -12,9 +13,10 @@ namespace Northwind.Core.Models
         {
             context = ctx;
         }
-        // create IQueryable for Blogs & Posts
+
         public IQueryable<Category> Categories => context.Categories;
         public IQueryable<Product> Products => context.Products;
+        public IQueryable<Discount> Discounts => context.Discounts;
 
     }
 }
